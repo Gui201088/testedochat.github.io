@@ -1,0 +1,155 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+color:#fff;
+background:linear-gradient(180deg,#0f172a,#1e3cff);
+overflow-x:hidden;
+}
+
+/* CONTAINER */
+.container{
+max-width:900px;
+margin:auto;
+padding:0 20px;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+/* animação leve de fundo */
+.hero::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#3b82f6 0%, transparent 70%);
+filter:blur(120px);
+animation:float 6s infinite alternate;
+z-index:0;
+}
+
+@keyframes float{
+from{transform:translateY(-40px)}
+to{transform:translateY(40px)}
+}
+
+.logo{
+font-size:80px;
+letter-spacing:6px;
+font-weight:800;
+z-index:1;
+}
+
+.subtitle{
+opacity:.7;
+margin:10px 0 30px;
+z-index:1;
+}
+
+/* BOTÕES */
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+z-index:1;
+}
+
+button{
+padding:14px 28px;
+border-radius:10px;
+border:none;
+font-weight:600;
+cursor:pointer;
+background:#3b82f6;
+color:#fff;
+transition:.25s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+button.outline{
+background:transparent;
+border:1px solid #fff;
+}
+
+/* PAGES */
+.page{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,#0f172a,#1e3cff);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+pointer-events:none;
+transition:.4s;
+}
+
+.page.active{
+opacity:1;
+pointer-events:all;
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:15px;
+width:100%;
+max-width:420px;
+}
+
+/* INPUT */
+input,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+background:rgba(255,255,255,0.1);
+color:#fff;
+outline:none;
+}
+
+/* BOTÃO VOLTAR */
+.back{
+margin-top:10px;
+background:transparent;
+border:1px solid #fff;
+}
+
+/* ADMIN */
+.admin-card{
+background:#fff;
+color:#000;
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+}
+
+.admin-card button{
+margin-top:10px;
+width:48%;
+}
+
+/* RESPONSIVO */
+@media (min-width:768px){
+.logo{font-size:110px}
+.subtitle{font-size:18px}
+}
